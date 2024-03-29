@@ -59,7 +59,7 @@ public:
     std::string getCheckOutDate() const { return checkOutDate; }
     double getAdvancePayment() const { return advancePayment; }
 
-    // set methods
+    // Set methods
     void setBookingID(std::string newID) { bookingID = newID; }
     void setName(std::string newName) { customerName = newName; }
     void setPhone(std::string newPhone) { phoneNumber = newPhone; }
