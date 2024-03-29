@@ -9,7 +9,7 @@ const int MAX_ROOMS = 100;
 const int MAX_CUSTOMERS = 100;
 
 class Customer
-{ // Darrius
+{
 private:
     std::string bookingID;
     std::string customerName;
@@ -80,7 +80,7 @@ public:
 };
 
 class Room
-{ // yuzu
+{
 private: 
     int roomNum;
     std::string acTemp;
@@ -146,7 +146,7 @@ public:
 };
 
 class hotelManagement : public Room
-{ //Josh
+{
 private:
     // Private variables to store the amount of rooms and customers
     int amtOfRooms;
@@ -238,7 +238,7 @@ public:
         return r;
     }
 
-    Room deleteRoom(Room rooms[MAX_ROOMS]) //Yongsheng
+    Room deleteRoom(Room rooms[MAX_ROOMS])
     {
         Room tempRoom;
         int roomNum;
@@ -301,7 +301,7 @@ public:
     return tempRoom; // tempRoom will be an uninitialized Room object if not found
 }
 
-    void manageRooms(Room rooms[MAX_ROOMS]) // Jett
+    void manageRooms(Room rooms[MAX_ROOMS])
     {
         // Int that we use for the switch statement below
         int choice2;
@@ -373,7 +373,7 @@ public:
         return c;
     }
 
-    void roomAvail(Room rooms[MAX_ROOMS]) //Josh
+    void roomAvail(Room rooms[MAX_ROOMS])
     {
         std::cout << "These room numbers are available " << std::endl;
 
@@ -397,7 +397,7 @@ public:
         }
     }
 
-    Customer searchCustomer(Customer customers[MAX_CUSTOMERS]) //Yongsheng
+    Customer searchCustomer(Customer customers[MAX_CUSTOMERS])
     {
         std::string customerName;
         Customer temp;
@@ -500,7 +500,7 @@ Customer checkOutRoom(Customer customer[MAX_CUSTOMERS],
     }
 };
 
-int main() //Jett
+int main()
 {
     // calling a class into the main method
     hotelManagement hotel;
