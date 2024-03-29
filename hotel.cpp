@@ -280,39 +280,26 @@ public:
         return tempRoom;
     }
 
-    Room searchRoom(Room rooms[MAX_ROOMS]) //Darrius
-    {
-        // Integer that stores the room number the user inputs
-        Room tempRoom;
-        int room;
-        int counter = 0;
+    Room searchRoom(Room rooms[MAX_ROOMS], int amtOfRooms) {
+    Room tempRoom; // Temporary Room object to store the search result
+    int roomNumber;
 
-        // Ask the user for the room number
-        std::cout << "Enter room number: " << std::endl;
-        std::cin >> room;
+    std::cout << "Enter room number: ";
+    std::cin >> roomNumber;
 
-        // For loop to iterate through the rooms array
-        for (int i = 0; i < amtOfRooms; i++)
-        {
-            // If the user inputted room number matches one in the rooms array
-            // displays the room information
-            if (room == rooms[i].getRoomNum())
-            {
-                counter++;
-                tempRoom = rooms[i];
-                rooms[i].displayRoom(rooms[i]);
-                break;
-                // If we reach the end of the array and the room number is not found
-                // displays that the room is not found
-            }
+    // Iterate through the rooms array to find a room with the given number
+    for (int i = 0; i < amtOfRooms; i++) {
+        if (roomNumber == rooms[i].getRoomNum()) {
+            tempRoom = rooms[i]; // Store the found room
+            rooms[i].displayRoom(rooms[i]); // Display the room details
+            return tempRoom; // Return the found room and exit the function
         }
-      
-        if (counter == 0)
-        {
-            std::cout << "Room not found!!!" << std::endl;
-        }
-        return tempRoom;
     }
+
+    // If the loop completes without finding the room, the room is not found
+    std::cout << "Room not found!!!" << std::endl;
+    return tempRoom; // tempRoom will be an uninitialized Room object if not found
+}
 
     void manageRooms(Room rooms[MAX_ROOMS]) // Jett
     {
